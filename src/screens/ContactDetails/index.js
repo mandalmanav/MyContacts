@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Text, StyleSheet, Pressable, Image, Alert } from 'react-native'
-// import { Icon } from 'react-native-elements'
 import { useDispatch, useSelector } from 'react-redux'
 import { CONTACT_LIST } from '../../../route-constant';
 import { deleteContactAction } from '../../store/actions/contacts'
@@ -9,7 +8,7 @@ const alertMessage = "Are you sure you want to delete this contact ?"
 const cancelText = "Cancel"
 const confirmText = "Yes, Delete"
 
-export default ({ route, navigation }) => {
+export default ({navigation }) => {
     const { contact } = useSelector(state => state)
     const dispatch = useDispatch()
     const deleteContact = (contact) => {
@@ -54,44 +53,6 @@ export default ({ route, navigation }) => {
             <View style={styles.nameView}>
                 <Text testID="full-name" style={styles.label}>{contact.firstName} {contact.lastName}</Text>
             </View>
-            {/* <View style={styles.actionBar}>
-                <Icon
-                    testID="comment-icon"
-                    reverse
-                    reverseColor='white'
-                    type='font-awesome'
-                    name='comment'
-                    color="#4d90fe"
-                    size={20}
-                />
-                <Icon
-                    testID="phone-icon"
-                    reverse
-                    reverseColor='white'
-                    type='font-awesome'
-                    name='phone'
-                    color="#4d90fe"
-                    size={20}
-                />
-                <Icon
-                    testID="camera-icon"
-                    reverse
-                    reverseColor='white'
-                    type='font-awesome'
-                    name='video-camera'
-                    color="#4d90fe"
-                    size={20}
-                />
-                <Icon
-                    testID="envelope-icon"
-                    reverse
-                    reverseColor='white'
-                    type='font-awesome'
-                    name='envelope'
-                    color="#4d90fe"
-                    size={20}
-                />
-            </View> */}
         </View>
         <View style={styles.content}>
             <View style={styles.formItem} >
