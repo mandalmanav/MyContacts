@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image, TextInput, Pressable, Alert } from 'reac
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_SELECTED, } from '../../store/constants';
 export default () => {
-    let { contact } = useSelector(state => state)
+    const { contact } = useSelector(state => state)
     const dispatch = useDispatch()
 
     const setContact = (property, value) => {

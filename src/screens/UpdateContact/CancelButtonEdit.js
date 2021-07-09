@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CONTACT_DETAILS } from '../../../route-constant';
 import { SET_SELECTED } from '../../store/constants';
 export default ({ navigation }) => {
-    let { contact, contacts } = useSelector(state => state)
-    let dispatch = useDispatch()
+    const { contact, contacts } = useSelector(state => state)
+    const dispatch = useDispatch()
     return (<Pressable onPress={async () => {
         let oldContact = contacts.filter(c => c.id == contact.id)[0]
         dispatch({

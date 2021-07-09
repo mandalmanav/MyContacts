@@ -7,8 +7,8 @@ import { updateContactAction } from '../../store/actions/contacts';
 import { validateContact } from '../../utils/validate';
 
 export default ({ navigation }) => {
-    let { contact } = useSelector(state => state)
-    let dispatch = useDispatch()
+    const { contact } = useSelector(state => state)
+    const dispatch = useDispatch()
     return (<Pressable onPress={async () => {
         if (validateContact(contact)) {
             await updateContactAction(dispatch, { id: contact.id, contact })
