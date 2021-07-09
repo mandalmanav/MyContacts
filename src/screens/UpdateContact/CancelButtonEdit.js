@@ -8,7 +8,7 @@ export default ({ navigation }) => {
     const { contact, contacts } = useSelector(state => state)
     const dispatch = useDispatch()
     return (<Pressable onPress={async () => {
-        let oldContact = contacts.filter(c => c.id == contact.id)[0]
+        const oldContact = contacts.filter(c => c.id == contact.id)[0]
         dispatch({
             type: SET_SELECTED,
             payload: oldContact
